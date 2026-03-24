@@ -4,6 +4,7 @@ POST_CREATE_DATA = {
     "status": "publish",
     "author": 1,
     "comment_status": "open",
+    "date": "2026-03-24T12:00:00",
 }
 
 POST_UPDATE_DATA = {
@@ -12,6 +13,7 @@ POST_UPDATE_DATA = {
     "status": "publish",
     "author": 1,
     "comment_status": "open",
+    "date": "2026-03-24T12:00:00",
 }
 
 COMMENT_CREATE_DATA = {
