@@ -26,20 +26,32 @@ def config():
 
 
 @pytest.fixture(scope="session")
-def api_client():
+def api_client(config):
     return WordPressAPIClient(
         base_url=config["wp_base_url"],
         username=config["wp_username"],
-        password=["wp_password"],
+        password=config["wp_password"],
     )
 
 
 @pytest.fixture(scope="session")
-def db_client():
+def db_client(config):
     return WordPressDataBaseClient(
-        host=["db_host"],
-        port=["db_port"],
-        database=["db_name"],
-        user=["db_user"],
-        password=["db_password"],
+        host=config["db_host"],
+        port=config["db_port"],
+        database=config["db_name"],
+        user=config["db_user"],
+        password=config["db_password"],
     )
+
+
+@pytest.fixture
+def created_post_ids():
+    ids = []
+    yield ids
+
+
+@pytest.fixture
+def created_comment_ids():
+    ids = []
+    yield ids
